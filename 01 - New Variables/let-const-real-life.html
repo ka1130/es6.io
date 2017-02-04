@@ -1,23 +1,35 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="UTF-8">
-  <title>let and const real world</title>
+    <meta charset="UTF-8">
+    <title>let and const real world</title>
 </head>
+
 <body>
-<script>
-  {
-    const name = 'wes';
-    console.log(name);
-  }
+    <script>
+        //instead of IIFE you can just use block scope {}, because that's all that let and const need in order no to leak out
+        {
+            const name = "wes";
+            console.log(name);
+        }
 
-  for(let i = 0; i < 10; i++) {
-    console.log(i);
-    setTimeout(function() {
-      console.log('The number is ' + i);
-    },1000);
-  }
+        for (var i = 0; i < 10; i++) {
+            console.log(i); //now i leaked out, it's a global variable with the value of
+            setTimeout(function() {
+                console.log("The number is " + i);
+            }, 1000);
+            //after 1 s this loop has already gone through and i = 10; it's been overwritten
+            //we don't have any way to reference the variable i now
+        }
 
-</script>
+        for (let i = 0; i < 10; i++) {
+            console.log(i);
+            setTimeout(function() {
+                console.log("The number is " + i);
+            }, 1000);
+        }
+    </script>
 </body>
+
 </html>
