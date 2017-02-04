@@ -45,7 +45,7 @@
           return (seconds[0] * 60) + seconds[1];
         })
         // reduce to get total
-        .reduce((total, second) => total + second);
+        .reduce((total, second) => total + second, 0);
 
     
     console.log(filtered);
