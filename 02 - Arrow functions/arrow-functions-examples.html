@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="UTF-8">
-  <title>Arrow functions examples</title>
+    <meta charset="UTF-8">
+    <title>Arrow functions examples</title>
 </head>
+
 <body>
-<script>
+    <script>
+        const race = "100m Dash";
+        const winners = ["Hunter Gath", "Singa Song", "Imda Bos"];
 
-const race = '100m Dash';
-const winners = ['Hunter Gath', 'Singa Song', 'Imda Bos'];
+        const win = winners.map((winner, i) => ({
+            name: winner,
+            race, //instead of race: race
+            place: i
+        })); //extra parenthesis show that you're going to return an object
 
-const win = winners.map((winner, i) => ({name: winner, race, place: i + 1}));
+        console.table(win);
 
-const ages = [23,62,45,234,2,62,234,62,34];
+        const ages = [23, 56, 43, 98, 4, 54, 120, 65, 2, 16];
 
-const old = ages.filter(age => age >= 60);
-console.log(old);
-
-</script>
+        const old = ages.filter(age => age >= 60);
+        //instead of if(age >= 60) {}...because there would be either true or false in the condition
+        console.log(old);
+    </script>
 </body>
+
 </html>
