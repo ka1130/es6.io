@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Default Arguments</title>
-</head>
-<body>
-<script>
-  function calculateBill(total, tax = 0.13, tip = 0.15) {
-    return total + (total * tax) + (total * tip);
-  }
 
-  const totalBill = calculateBill(100, undefined, 0.25);
-  console.log(totalBill);
-</script>
+<head>
+    <meta charset="UTF-8">
+    <title>Default Arguments</title>
+</head>
+
+<body>
+    <script>
+    function calculateBill(total, tax = 0.13, tip = 0.15) {
+    	return total + (total * tax) + (total * tip);
+    }
+    //const totalBill = calculateBill(100); 
+    //error because we're trying to do maths 
+    //agains things that aren't passed in
+
+    const totalBill = calculateBill(100, undefined, 0.25);
+    console.log(totalBill);
+    </script>
 </body>
+
 </html>
