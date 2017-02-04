@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="UTF-8">
-  <title>let and const</title>
+    <meta charset="UTF-8">
+    <title>let and const</title>
 </head>
+
 <body>
-<script>
-  const key = 'abc123';
-  let points = 50;
-  let winner = false;
+    <script>
+        const key = "abc123";
+        //const variables cannot be updated, let are made to be updated
 
-  const person = {
-    name: 'Wes',
-    age: 28
-  }
+        //let can only be declared once, whereas var can be reassigned with no error
+        //you cannot redeclare it twice in the same scope
+        let points = 50;
+        let winner = false;
 
-  const wes = Object.freeze(person);
+        if (points > 40) {
+            let winner = true; //now when I type winner to the console I get false! because of the scope range
+            //let winner above and here are two separate variables
+        }
 
-</script>
+        const person = {
+                name: "Kamila",
+                age: 33
+            }
+            //the object itself (declared as const) cannot be reassigned, however I can reassign some properties,
+            // like in this case name or age
+            //I can also freeze an object like that:
+        const kamila = Object.freeze(person);
+    </script>
 </body>
+
 </html>
