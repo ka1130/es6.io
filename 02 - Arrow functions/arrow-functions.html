@@ -1,35 +1,55 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="UTF-8">
-  <title>Arrow functions → → </title>
+    <meta charset="UTF-8">
+    <title>Arrow functions → → </title>
 </head>
+
 <body>
-<script>
-  const names = ['wes', 'kait', 'lux'];
+    <script>
+        // 1. Arrow functions are much more concise
+        // 2. Implicit returns that let you write nifty one-liners
+        // 3. They don't rebind the value of this when you use an arrow function inside of another function
 
-  const fullNames = names.map(function(name) {
-    return `${name} bos`;
-  });
+        const names = ["wes", "kait", "lux"];
+        const fullNames = names.map(function(name) {
+            return `${name} bos`;
+        });
 
-  const fullNames2 = names.map((name) => {
-    return `${name} bos`;
-  });
+        console.log(fullNames);
 
-  const fullNames3 = names.map(name => {
-    return `${name} bos`;
-  });
+        const fullNames2 = names.map((name) => {
+            return `${name} bos`;
+        });
 
-  const fullNames4 = names.map(name => `${name} bos`);
+        console.log(fullNames2);
 
-  const fullNames5 = names.map(() => `cool bos`);
+        //if you only have one parameter, there's no need to use parenthesis
+        const fullNames3 = names.map(name => {
+            return `${name} bos`;
+        });
 
-  const sayMyName = (name) => {
-    alert(`Hello ${name}!`)
-  }
+        console.log(fullNames3);
 
-  sayMyName('Wes');
+        //I can also use what's called an implicit return, when you only have one line with return statement
+        //curly brackets deleted
+        //the function assumes we're doing return
+        const fullNames4 = names.map(name => `${name} bos`);
+        console.log(fullNames4);
 
-</script>
+        //if you have no arguments at all, you need to pass some empty parethesis like () =>
+        const fullNames5 = names.map(() => `cool bos`);
+        console.log(fullNames5);
+
+        //arrow functions are always anonymous functions
+
+        const sayMyName = (name) => {
+            alert(`Hello ${name}`)
+        };
+
+        sayMyName("Kamila");
+    </script>
 </body>
+
 </html>
