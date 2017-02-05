@@ -1,28 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Destructuring in Action!</title>
+    <meta charset="UTF-8">
+    <title>Destructuring in Action!</title>
 </head>
+
 <body>
-<script>
-  function convertCurrency(amount) {
-    const converted = {
-      USD: amount * 0.76,
-      GPB: amount * 0.53,
-      AUD: amount * 1.01,
-      MEX: amount * 13.30
-    };
-    return converted;
-  }
+    <script>
+        function convertCurrency(amount) {
+            const converted = {
+                USD: amount * 0.76,
+                GPB: amount * 0.53,
+                AUD: amount * 1.01,
+                MEX: amount * 13.30
+            };
+            return converted;
+        }
 
-  function tipCalc({ total = 100, tip = 0.15, tax = 0.13 } = {}) {
-    return total + (tip * total) + (tax * total);
-  }
+        const { USD, GPB, AUD, MEX } = convertCurrency(100);
+        //you can also change the order of them because this is an object
+        //you can also throw just some of them like
+        //const { GPB, MEX } = convertCurrency(100);
 
-  const bill = tipCalc({ tip: 0.20, total: 200 });
-  console.log(bill);
+        console.log(USD, GPB, AUD, MEX);
 
-</script>
+        function tipCal1(total, tip = 0.15, tax = 0.13) {
+            return total + (tip * total) + (tax * total);
+            //now we need to care about the order
+        }
+
+        function tipCalc({ total = 100, tip = 0.15, tax = 0.13 } = {}) {
+            //if nothing will be passed, the default is an empty object
+            return total + (tip * total) + (tax * total);
+        }
+
+        const bill = tipCalc({ tip: 0.20, total: 200 });
+        //we don't need to pass them all, order also doesn't matter
+        console.log(bill);
+    </script>
 </body>
+
 </html>
