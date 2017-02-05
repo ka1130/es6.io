@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Destructuring!</title>
-</head>
-<body>
-<script>
-  // Object Destructuring with variable renaming & default values
-  const { w: width = 400, h: height = 500 } = { w: 800 }
 
-</script>
+<head>
+    <meta charset="UTF-8">
+    <title>Destructuring!</title>
+</head>
+
+<body>
+    <script>
+        // Object Destructuring with variable renaming & default values
+        const {
+            w: width = 400,
+            h: height = 500
+        } = {
+            w: 800
+        }
+        //we have variables called width and height, they are destructuring/renaming w and h
+        //from the object on the right side
+        console.log(width); //800
+        console.log(height); //500
+    </script>
 </body>
+
 </html>
