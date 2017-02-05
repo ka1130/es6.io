@@ -1,40 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Destructuring!</title>
+    <meta charset="UTF-8">
+    <title>Destructuring!</title>
 </head>
+
 <body>
-<script>
-  const person = {
-    first: 'Wes',
-    last: 'Bos',
-    country: 'Canada',
-    city: 'Hamilton',
-    twitter: '@wesbos'
-  };
+    <script>
+        const person = {
+            first: 'Wes',
+            last: 'Bos',
+            country: 'Canada',
+            city: 'Hamilton',
+            twitter: '@wesbos'
+        };
 
-  const { first, last, twitter } = person;
+        const {
+            first,
+            last,
+            twitter
+        } = person;
+        //destructuring syntax instead of declaring three variables in three lines
+        //give me variables called first, last, twitter and take them from the person
 
-  const wes = {
-    first: 'Wes',
-    last: 'Bos',
-    links: {
-      social: {
-        twitter: 'https://twitter.com/wesbos',
-        facebook: 'https://facebook.com/wesbos.developer',
-      },
-      web: {
-        blog: 'https://wesbos.com'
-      }
-    }
-  };
+        const wes = {
+            first: 'Wes',
+            last: 'Bos',
+            links: {
+                social: {
+                    twitter: 'https://twitter.com/wesbos',
+                    facebook: 'https://facebook.com/wesbos.developer',
+                },
+                web: {
+                    blog: 'https://wesbos.com'
+                }
+            }
+        };
 
-  const { twitter: tweet, facebook: fb } = wes.links.social;
+        // const {
+        //     twitter,
+        //     facebook
+        // } = wes.links.social;
+        //but I cannot use const twitter again, I can rename them as I destructure them
 
-  const settings = { width: 300, color: 'black' }  // height, fontSize
-  const { width = 100, height = 100, color = 'blue', fontSize = 25} = settings;
+        const {
+            twitter: tweet,
+            facebook: fb
+        } = wes.links.social;
+        console.log(tweet);
+        console.log(fb);
+        //I want the twitter property but I wanna name it tweet
 
-</script>
+        //we can also use defaults
+        const settings = {
+            width: 300,
+            color: "black"
+        };
+        //however the thing that we're building also requires the height and the fontSize
+        // const {
+        //     width,
+        //     height,
+        //     color,
+        //     fontSize
+        // } = settings;
+        //now hegith and font-size will be undefined which is a bit of a problem for us
+        //so when we declare our const we can set a sort of a fallback/default value
+
+        const {
+            width = 100, height = 100, color = "blue", fontSize = 25
+        } = settings;
+        //now width will be 300, height 100, color "black", fontSize 25
+        console.log(width); //300
+        console.log(height); //100
+        console.log(color); //"black"
+        console.log(fontSize); //25
+    </script>
 </body>
+
 </html>
