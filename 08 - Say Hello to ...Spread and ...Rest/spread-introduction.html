@@ -1,24 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>The ...Spread Operator</title>
+    <meta charset="UTF-8">
+    <title>The ...Spread Operator</title>
 </head>
+
 <body>
-<script>
+    <script>
+        const featured = ['Deep Dish', 'Pepperoni', 'Hawaiian'];
+        const specialty = ['Meatzza', 'Spicy Mama', 'Margherita'];
+        const pizzas = featured.concat(specialty);
+        console.log(pizzas);
 
-  const featured = ['Deep Dish', 'Pepperoni', 'Hawaiian'];
-  const specialty = ['Meatzza', 'Spicy Mama', 'Margherita'];
+        //you can take every single item in the array and spread it into a new array
+        let pizzas2 = [...featured, "veg", ...specialty];
+        console.log(pizzas2);
 
-  const pizzas = [...featured, 'veg', ...specialty];
-  const fridayPizzas = [...pizzas];
+        const fridayPizzas = [...pizzas2];
+        //copy pizzas2, not referencing it
+        console.log(fridayPizzas);
 
-  const deepDish = {
-    pizzaName: 'Deep Dish',
-    size: 'Medium',
-    ingredients: ['Marinara', 'Italian Sausage', 'Dough', 'Cheese']
-  };
 
-</script>
+
+        const deepDish = {
+            pizzaName: 'Deep Dish',
+            size: 'Medium',
+            ingredients: ['Marinara', 'Italian Sausage', 'Dough', 'Cheese']
+        };
+    </script>
 </body>
+
 </html>
