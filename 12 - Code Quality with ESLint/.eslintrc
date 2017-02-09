@@ -1,12 +1,13 @@
 {
-  "env": {
-    "es6": true,
-    "browser": true
-  },
-  "extends": "airbnb",
-  "rules": {
-    "no-console": 0,
-    "no-unused-vars": 1
-  },
-  "plugins": ["html", "markdown"]
+    "env": {
+        "es6": true,
+        "browser": true
+
+    },
+    "extends": "airbnbP",
+    "rules": {
+        "no-console": 0,
+        "no-unused-vars": 1
+    },
+    "plugins": ["html", "markdown"]
 }

@@ -1,0 +1,22 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true,
+        "jquery": true
+    },
+    "extends": "airbnb",
+    "parserOptions": {
+        "sourceType": "module"
+    },
+    "rules": {
+        "linebreak-style": [
+            "error",
+            "windows"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ]
+    }
+}
